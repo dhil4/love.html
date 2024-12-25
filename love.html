@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Cinta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #34b05d;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #34b05d;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .text {
+            font-size: 24px;
+            color: #333;
+        }
+        .button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" id="text"></div>
+        <button class="button" id="nextButton">Lanjutkan</button>
+    </div>
+
+    <script>
+        const kalimat = [
+            "kamu nggak perlu mempertanyakan lagi aku sayang apa enggak sama kamu.",
+            "karna jawabannya, aku sayang bangeet sama kamu.",
+            "i love uu so much, i love u more than more.",
+            "aku nggak akan pernah capek buat bilang kalo aku sayang sama kamu,",
+            "dan aku juga bakal ngelakuin seribu cara buat buktiin kalo aku sesayang itu sama kamu.",
+            "kalo kamu mempertanyakan alasan kenapa aku bisa jatuh cinta sama kamu, aku bisa kasih seribu alasan.",
+            "tapi singkatnya, i fell in love with u bcs u are u.",
+            "kamu, selalu bikin aku jatuh cinta setiap hari, dari cara kamu memperlakukan aku,",
+            "cara kamu ngomong sama aku, itu bikin aku jatuh cinta.",
+            "nggak heran lagi kalau aku se sayang ini sama kamu.",
+            "aku berharap kita bisa bareng-bareng terus ya? kalo ada masalah dihubungan kita,",
+            "aku harap kita berdua bisa cari solusi nya sama-sama.",
+            "sekali lagi, aku sayang banget sama kamu,",
+            "aku harap aku bisa selalu bahagia dan bahagia nya sama kamu,",
+            "I LOVE YOU SAYANGGKU"
+        ];
+
+        let currentPage = 0;
+
+        // Menampilkan kalimat pertama
+        function displayText() {
+            document.getElementById('text').textContent = kalimat[currentPage];
+        }
+
+        // Fungsi untuk pindah ke halaman berikutnya
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentPage++;
+            if (currentPage < kalimat.length) {
+                displayText(); // Update kalimat
+            } else {
+                alert("Terima kasih sudah membaca!");
+                currentPage = 0; // Reset untuk memulai dari awal
+                displayText(); // Menampilkan lagi halaman pertama
+            }
+        });
+
+        // Tampilkan kalimat pertama
+        displayText();
+    </script>
+</body>
+</html>
